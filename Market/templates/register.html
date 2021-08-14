@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}
+Registration Page
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form method="POST" class="form_register" style="color:whtie">
+
+        {{ form.hidden_tag() }}
+
+        <div class="parent">
+            <img class="mb-4 text-center" src="https://wallpapercave.com/wp/wp2084607.jpg" alt="">
+        </div>
+        <h1 class="h3 mb-3 font-weight-normal text-center">
+            Create your Account
+        </h1>
+        {{ form.username.label() }}
+        {{ form.username(class="form-control", placeholder="User Name") }}
+
+        {{ form.email_address.label() }}
+        {{ form.email_address(class="form-control", placeholder="Email Address") }}
+
+        {{ form.password1.label() }}
+        {{ form.password1(class="form-control", placeholder="Password") }}
+
+        {{ form.password2.label() }}
+        {{ form.password2(class="form-control", placeholder="Confirm Password") }}
+
+        <br>
+        {{ form.submit(class="btn btn-block btn-lg btn-primary") }}
+        <br>
+
+        <div class="checkbox mb-3">
+            <h6>Already have an account?</h6>
+            <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Sign In</a>
+        </div>
+    </form>
+</div>
+
+<style>
+        img {
+        width: 30%;
+        border-radius: 5px;
+        }
+        .parent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        }
+        .container {
+        width: 50%;
+        height: auto;
+        }
+        .checkbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+        h6 {
+        padding-top: 1.2%;
+        padding-right:3%;
+        }
+</style>
+{% endblock %}

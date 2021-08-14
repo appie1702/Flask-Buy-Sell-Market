@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}
+Login Page
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form method="POST" class="form_register" style="color:white">
+
+        {{ form.hidden_tag() }}
+
+        <div class="parent">
+            <img class="mb-4 text-center" src="https://wallpapercave.com/wp/wp2084607.jpg" alt="">
+        </div>
+        <h1 class="h3 mb-3 font-weight-normal text-center">
+            Please Login
+        </h1>
+        <br>
+        {{ form.username.label() }}
+        {{ form.username(class="form-control", placeholder="User Name") }}
+
+        {{ form.password.label() }}
+        {{ form.password(class="form-control", placeholder="Password") }}
+
+        <br>
+        {{ form.submit(class="btn btn-block btn-lg btn-primary") }}
+        <br>
+
+        <div class="checkbox mb-3">
+            <h6>Do not have an account?</h6>
+            <a class="btn btn-sm btn-secondary" href="{{ url_for('register_page') }}">Sign up</a>
+        </div>
+    </form>
+</div>
+
+<style>
+        img {
+        width: 30%;
+        border-radius: 5px;
+        }
+        .parent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+        .container {
+        width: 50%;
+        height: auto;
+        }
+        .checkbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+        h6 {
+        padding-top: 1.2%;
+        padding-right:3%;
+        }
+</style>
+{% endblock %}
